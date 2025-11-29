@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro Cliente BLITZ - Lagarto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    .linha-dupla {
+      display: flex;
+      gap: 8px;
+    }
+    .linha-dupla > div {
+      flex: 1;
+    }
+    button {
+      margin-top: 16px;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>CADASTRO CLIENTE BLITZ - LAGARTO</h1>
+
+  <form id="cadastroForm">
+    <label>Nome completo:
+      <input type="text" id="nome" required>
+    </label>
+
+    <div class="linha-dupla">
+      <div>
+        <label>Telefone:
+          <input type="tel" id="telefone" placeholder="(xx) xxxxx-xxxx" required>
+        </label>
+      </div>
+      <div>
+        <label>Data de nascimento:
+          <input type="date" id="dataNasc" required>
+        </label>
+      </div>
+    </div>
+
+    <label>Endereço:
+      <input type="text" id="endereco" required>
+    </label>
+
+    <div class="linha-dupla">
+      <div>
+        <label>Bairro:
+          <input type="text" id="bairro" required>
+        </label>
+      </div>
+      <div>
+        <label>Cidade:
+          <input type="text" id="cidade" required>
+        </label>
+      </div>
+    </div>
+
+    <label>E-mail:
+      <input type="email" id="email">
+    </label>
+
+    <div class="linha-dupla">
+      <div>
+        <label>Vendedor:
+          <input type="text" id="vendedor" required>
+        </label>
+      </div>
+      <div>
+        <label>Data do cadastro:
+          <input type="date" id="dataCadastro" required>
+        </label>
+      </div>
+    </div>
+
+    <button type="button" onclick="enviarWhatsApp()">
+      Enviar cadastro pelo WhatsApp
+    </button>
+  </form>
+
+  <script>
+    function enviarWhatsApp() {
+      const nome = document.getElementById('nome').value;
+      const telefone = document.getElementById('telefone').value;
+      const dataNasc = document.getElementById('dataNasc').value;
+      const endereco = document.getElementById('endereco').value;
+      const bairro = document.getElementById('bairro').value;
+      const cidade = document.getElementById('cidade').value;
+      const email = document.getElementById('email').value;
+      const vendedor = document.getElementById('vendedor').value;
+      const dataCadastro = document.getElementById('dataCadastro').value;
+
+      if (!nome || !telefone || !dataNasc || !endereco || !bairro || !cidade || !vendedor || !dataCadastro) {
+        alert("Preencha todos os campos obrigatórios.");
+        return;
+      }
+
+      const mensagem = 
+        "*CADASTRO CLIENTE BLITZ - LAGARTO*\n\n" +
+        "*Nome:* " + nome + "\n" +
+        "*Telefone:* " + telefone + "\n" +
+        "*Data de nascimento:* " + dataNasc + "\n" +
+        "*Endereço:* " + endereco + "\n" +
+        "*Bairro:* " + bairro + "\n" +
+        "*Cidade:* " + cidade + "\n" +
+        "*E-mail:* " + (email || "-") + "\n" +
+        "*Vendedor:* " + vendedor + "\n" +
+        "*Data do cadastro:* " + dataCadastro;
+
+      const numeroLoja = "5579998853579"; 
+
+      const url = "https://wa.me/" + numeroLoja + "?text=" + encodeURIComponent(mensagem);
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
