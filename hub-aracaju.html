@@ -6,11 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+*{
+  box-sizing:border-box;
+}
+
 body{
   font-family: Arial, sans-serif;
-  max-width: 480px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width:480px;
+  margin:0 auto;
+  padding:20px;
   background:#fff;
   color:#222;
 }
@@ -24,27 +28,29 @@ h1{
 .btn{
   width:100%;
   padding:14px;
-  margin:10px 0;
+  margin:12px 0;
   font-size:16px;
   border-radius:12px;
   border:1px solid #ddd;
   background:#fff;
   cursor:pointer;
+  display:block;
   text-align:center;
 }
 
 .content{
   display:none;
-  margin-bottom:20px;
-  padding:10px 5px;
+  padding:10px 5px 20px 5px;
 }
 
 .item{
-  margin-bottom:14px;
+  margin-bottom:18px;
+  padding-bottom:12px;
+  border-bottom:1px solid #eee;
 }
 
 .copy-btn{
-  margin-top:8px;
+  margin-top:10px;
   padding:8px 12px;
   font-size:14px;
   border-radius:8px;
@@ -54,8 +60,8 @@ h1{
 }
 
 a{
-  text-decoration:none;
   color:#000;
+  text-decoration:none;
 }
 </style>
 </head>
@@ -64,12 +70,10 @@ a{
 
 <h1>BLITZ – Aracaju<br>Como podemos te ajudar?</h1>
 
-<!-- Cadastro -->
 <a class="btn" href="https://loja-blitz.github.io/CADASTRO-BLITZ/" target="_blank">
 👤 Cadastro de Clientes
 </a>
 
-<!-- Wi-Fi -->
 <button class="btn" onclick="toggle('wifi')">
 📶 Wi-Fi da Loja
 </button>
@@ -78,26 +82,24 @@ a{
   <p><strong>Senha:</strong> cliente1000</p>
 </div>
 
-<!-- Pix -->
 <button class="btn" onclick="toggle('pix')">
 💰 Pagamento via Pix
 </button>
 <div id="pix" class="content">
-  <p><strong>Chave (CNPJ):</strong></p>
+  <p><strong>Chave Pix (CNPJ):</strong></p>
   <p id="pixKey">35142091000184</p>
   <button class="copy-btn" onclick="copyPix()">📋 Copiar chave Pix</button>
   <p><strong>Nome:</strong><br>Carvalho e Aragão Varejista LTDA</p>
 </div>
 
-<!-- Instagram -->
 <a class="btn" href="https://www.instagram.com/lojablitz/" target="_blank">
 📸 Instagram da Loja
 </a>
 
-<!-- Costureiras -->
 <button class="btn" onclick="toggle('costureiras')">
 🧵 Costureiras
 </button>
+
 <div id="costureiras" class="content">
 
   <div class="item">
@@ -108,17 +110,22 @@ a{
 
   <div class="item">
     <strong>Zig Zag Ateliê</strong><br>
+    <a href="https://maps.google.com/?q=Avenida+Hermes+Fontes+1777+Aracaju" target="_blank">📍 Ver no mapa</a><br>
     <a href="tel:7932113198">📞 (79) 3211-3198</a> /
     <a href="tel:79996081671">99608-1671</a>
   </div>
 
   <div class="item">
     <strong>Armarinho Ranetti</strong><br>
+    <a href="https://www.bing.com/maps/search?name=Ranetti+Armarinho&trfc=&mepi=0%7E%7EEmbedded%7ELargeMapLink&FORM=MPSRPL&style=r&q=Ranetti+Armarinho&ss=id.ypid%3AYN7993x5859191126295860030&ppois=-10.942157745361328_-37.05955123901367_Ranetti+Armarinho&cp=-10.941909%7E-37.059480&lvl=18.3" target="_blank">
+📍 Ver no mapa
+</a><br>
     <a href="tel:79991717847">📞 99171-7847</a>
   </div>
 
   <div class="item">
     <strong>Solange</strong><br>
+    <a href="https://maps.google.com/?q=Rua+Vereador+João+Calazans+384+Aracaju" target="_blank">📍 Ver no mapa</a><br>
     <a href="tel:79996040851">📞 99604-0851</a>
   </div>
 
@@ -131,8 +138,7 @@ function toggle(id){
 }
 
 function copyPix(){
-  const text=document.getElementById("pixKey").innerText;
-  navigator.clipboard.writeText(text);
+  navigator.clipboard.writeText("35142091000184");
   alert("Chave Pix copiada!");
 }
 </script>
