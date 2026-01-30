@@ -1,122 +1,141 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>BLITZ – Aracaju</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>BLITZ – Aracaju</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 20px;
-      background: #ffffff;
-      color: #222;
-    }
+<style>
+body{
+  font-family: Arial, sans-serif;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px;
+  background:#fff;
+  color:#222;
+}
 
-    h1 {
-      text-align: center;
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
+h1{
+  text-align:center;
+  font-size:20px;
+  margin-bottom:25px;
+}
 
-    .toggle-btn {
-      width: 100%;
-      padding: 14px;
-      margin: 10px 0;
-      font-size: 16px;
-      border-radius: 10px;
-      border: 1px solid #ddd;
-      background: #fff;
-      cursor: pointer;
-      text-align: center;
-    }
+.btn{
+  width:100%;
+  padding:14px;
+  margin:10px 0;
+  font-size:16px;
+  border-radius:12px;
+  border:1px solid #ddd;
+  background:#fff;
+  cursor:pointer;
+  text-align:center;
+}
 
-    .toggle-content {
-      display: none;
-      margin-bottom: 20px;
-    }
+.content{
+  display:none;
+  margin-bottom:20px;
+  padding:10px 5px;
+}
 
-    .item {
-      margin-bottom: 14px;
-    }
+.item{
+  margin-bottom:14px;
+}
 
-    a {
-      color: #000;
-      text-decoration: none;
-    }
-  </style>
+.copy-btn{
+  margin-top:8px;
+  padding:8px 12px;
+  font-size:14px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  background:#f5f5f5;
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+  color:#000;
+}
+</style>
 </head>
 
 <body>
 
-  <h1>BLITZ – Aracaju<br>Como podemos te ajudar?</h1>
+<h1>BLITZ – Aracaju<br>Como podemos te ajudar?</h1>
 
-  <!-- Cadastro -->
-  <a class="toggle-btn" href="https://loja-blitz.github.io/CADASTRO-BLITZ/" target="_blank">
-    👤 Cadastro de Clientes
-  </a>
+<!-- Cadastro -->
+<a class="btn" href="https://loja-blitz.github.io/CADASTRO-BLITZ/" target="_blank">
+👤 Cadastro de Clientes
+</a>
 
-  <!-- Wi-Fi -->
-  <button class="toggle-btn" onclick="toggle('wifi')">
-    📶 Wi-Fi da Loja
-  </button>
-  <div id="wifi" class="toggle-content">
-    <p><strong>Rede:</strong> lojablitzaju</p>
-    <p><strong>Senha:</strong> cliente1000</p>
+<!-- Wi-Fi -->
+<button class="btn" onclick="toggle('wifi')">
+📶 Wi-Fi da Loja
+</button>
+<div id="wifi" class="content">
+  <p><strong>Rede:</strong> lojablitzaju</p>
+  <p><strong>Senha:</strong> cliente1000</p>
+</div>
+
+<!-- Pix -->
+<button class="btn" onclick="toggle('pix')">
+💰 Pagamento via Pix
+</button>
+<div id="pix" class="content">
+  <p><strong>Chave (CNPJ):</strong></p>
+  <p id="pixKey">35142091000184</p>
+  <button class="copy-btn" onclick="copyPix()">📋 Copiar chave Pix</button>
+  <p><strong>Nome:</strong><br>Carvalho e Aragão Varejista LTDA</p>
+</div>
+
+<!-- Instagram -->
+<a class="btn" href="https://www.instagram.com/lojablitz/" target="_blank">
+📸 Instagram da Loja
+</a>
+
+<!-- Costureiras -->
+<button class="btn" onclick="toggle('costureiras')">
+🧵 Costureiras
+</button>
+<div id="costureiras" class="content">
+
+  <div class="item">
+    <strong>Maria Maria Ateliê</strong><br>
+    <a href="https://maps.app.goo.gl/uoHcCS2TLzriiF698" target="_blank">📍 Ver no mapa</a><br>
+    <a href="tel:79999768810">📞 (79) 99976-8810</a>
   </div>
 
-  <!-- Pix -->
-  <button class="toggle-btn" onclick="toggle('pix')">
-    💰 Pagamento via Pix
-  </button>
-  <div id="pix" class="toggle-content">
-    <p><strong>Chave (CNPJ):</strong> 35142091000184</p>
-    <p><strong>Nome:</strong> Carvalho e Aragão Varejista LTDA</p>
+  <div class="item">
+    <strong>Zig Zag Ateliê</strong><br>
+    <a href="tel:7932113198">📞 (79) 3211-3198</a> /
+    <a href="tel:79996081671">99608-1671</a>
   </div>
 
-  <!-- Instagram -->
-  <a class="toggle-btn" href="https://www.instagram.com/lojablitz/" target="_blank">
-    📸 Instagram da Loja
-  </a>
-
-  <!-- Costureiras -->
-  <button class="toggle-btn" onclick="toggle('costureiras')">
-    🧵 Costureiras
-  </button>
-  <div id="costureiras" class="toggle-content">
-
-    <div class="item">
-      <strong>Maria Maria Ateliê</strong><br>
-      <a href="https://maps.app.goo.gl/uoHcCS2TLzriiF698" target="_blank">📍 Ver no mapa</a><br>
-      <a href="tel:79999768810">📞 (79) 99976-8810</a>
-    </div>
-
-    <div class="item">
-      <strong>Zig Zag Ateliê</strong><br>
-      <a href="tel:7932113198">📞 (79) 3211-3198</a> /
-      <a href="tel:79996081671">99608-1671</a>
-    </div>
-
-    <div class="item">
-      <strong>Armarinho Ranetti</strong><br>
-      <a href="tel:79991717847">📞 99171-7847</a>
-    </div>
-
-    <div class="item">
-      <strong>Solange</strong><br>
-      <a href="tel:79996040851">📞 99604-0851</a>
-    </div>
-
+  <div class="item">
+    <strong>Armarinho Ranetti</strong><br>
+    <a href="tel:79991717847">📞 99171-7847</a>
   </div>
 
-  <script>
-    function toggle(id) {
-      const el = document.getElementById(id);
-      el.style.display = el.style.display === "block" ? "none" : "block";
-    }
-  </script>
+  <div class="item">
+    <strong>Solange</strong><br>
+    <a href="tel:79996040851">📞 99604-0851</a>
+  </div>
+
+</div>
+
+<script>
+function toggle(id){
+  const el=document.getElementById(id);
+  el.style.display = el.style.display==="block" ? "none" : "block";
+}
+
+function copyPix(){
+  const text=document.getElementById("pixKey").innerText;
+  navigator.clipboard.writeText(text);
+  alert("Chave Pix copiada!");
+}
+</script>
 
 </body>
 </html>
