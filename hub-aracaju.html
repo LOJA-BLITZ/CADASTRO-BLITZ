@@ -99,31 +99,56 @@
   <h1>BLITZ – Aracaju<br>Como podemos te ajudar?</h1>
 
   <!-- CADASTRO -->
-  <button class="botao" onclick="toggle('cadastro')">👤 Cadastro de Clientes</button>
-  <div class="conteudo" id="cadastro">
-    <a href="https://loja-blitz.github.io/CADASTRO-BLITZ/" target="_blank">
-      👉 Abrir formulário de cadastro
-    </a>
-  </div>
+  <button class="botao"
+        onclick="toggle('cadastro'); gtag('event','cadastro_clientes');">
+👤 Cadastro de Clientes
+</button>
+
+<div class="conteudo" id="cadastro">
+  <a href="https://loja-blitz.github.io/CADASTRO-BLITZ/"
+     target="_blank"
+     onclick="gtag('event','cadastro_abrir_formulario');">
+  📝 Abrir formulário de cadastro
+  </a>
+</div>
+
 
   <!-- WIFI -->
-  <button class="botao" onclick="toggle('wifi')">📶 Wi-Fi da Loja</button>
+  <button class="botao"
+        onclick="toggle('wifi'); gtag('event','wifi_abrir');">
+📶 Wi-Fi da Loja
+</button>
+
   <div class="conteudo" id="wifi">
     <strong>Rede:</strong> lojablitzaju<br>
     <strong>Senha:</strong> cliente1000
   </div>
 
   <!-- PIX -->
-  <button class="botao" onclick="toggle('pix')">💰 Pagamento via Pix</button>
+  <button class="botao"
+        onclick="toggle('pix'); gtag('event','pix_aberto');">
+💰 Pagamento via Pix
+</button>
+
   <div class="conteudo" id="pix">
     <strong>Chave Pix (CNPJ):</strong><br>
     35.142.091/0001-84<br>
     Carvalho e Aragão Varejista LTDA<br>
-    <button class="copiar" onclick="copiarPix()">📋 Copiar chave Pix</button>
+    <button onclick="navigator.clipboard.writeText('35.142.091/0001-84');
+                 gtag('event','pix_copiar_chave');">
+📋 Copiar chave Pix
+</button>
+
   </div>
 
   <!-- INSTAGRAM -->
-  <button class="botao" onclick="toggle('insta')">📸 Instagram da Loja</button>
+  <a class="botao"
+   href="https://instagram.com/SUA_LOJA"
+   target="_blank"
+   onclick="gtag('event','instagram_loja');">
+📸 Instagram da Loja
+</a>
+
   <div class="conteudo" id="insta">
     <a href="https://www.instagram.com/lojablitz/" target="_blank">
       👉 Abrir Instagram
@@ -138,21 +163,51 @@
       <strong>Maria Maria Ateliê</strong>
       Rua Urquiza Leal, Galeria 15 – Sala 5<br>
       Praça Assis Chateaubriand – Salgado Filho<br>
-      <a href="https://maps.app.goo.gl/uoHcCS2TLzriiF698" target="_blank">📍 Ver no mapa</a><br>
-      <div class="links">
-        <a href="tel:79999768810">📞 Ligar</a>
-        <a href="https://wa.me/5579999768810" target="_blank">💬 WhatsApp</a>
+     <a href="https://maps.app.goo.gl/uoHcCS2TLzriiF698"
+   target="_blank"
+   onclick="gtag('event','costureira_maria_mapa');">
+📍 Ver no mapa
+</a><br>
+
+<a href="tel:79999768810"
+   onclick="gtag('event','costureira_maria_ligar');">
+📞 Ligar
+</a>
+
+<a href="https://wa.me/5579999768810"
+   target="_blank"
+   onclick="gtag('event','costureira_maria_whatsapp');">
+💬 WhatsApp
+</a>
+
       </div>
     </div>
 
     <div class="item">
       <strong>Zig Zag Ateliê</strong>
       Av. Hermes Fontes, 1777 – Grageru<br>
-      <a href="https://maps.google.com/?q=Avenida+Hermes+Fontes+1777+Aracaju" target="_blank">📍 Ver no mapa</a><br>
-      <div class="links">
-        <a href="tel:7932113198">📞 Ligar (fixo)</a>
-        <a href="tel:79996081671">📞 Ligar (celular)</a>
-        <a href="https://wa.me/5579996081671" target="_blank">💬 WhatsApp</a>
+      <a href="https://maps.google.com/?q=Av Hermes Fontes 1777 Aracaju"
+   target="_blank"
+   onclick="gtag('event','costureira_zigzag_mapa');">
+📍 Ver no mapa
+</a>
+
+<a href="tel:7932113198"
+   onclick="gtag('event','costureira_zigzag_ligar_fixo');">
+📞 Ligar (fixo)
+</a>
+
+<a href="tel:79996081671"
+   onclick="gtag('event','costureira_zigzag_ligar_celular');">
+📞 Ligar (celular)
+</a>
+
+<a href="https://wa.me/5579996081671"
+   target="_blank"
+   onclick="gtag('event','costureira_zigzag_whatsapp');">
+💬 WhatsApp
+</a>
+
       </div>
     </div>
 
@@ -160,20 +215,46 @@
       <strong>Armarinho Ranetti</strong>
       Shopping Jardins – Aracaju<br>
       Próximo à Casa da Cópia / em frente à farmácia GBarbosa<br>
-      <a href="https://www.bing.com/maps/search?mepi=0%7E%7EEmbedded%7EAddress_Link&ty=18&v=2&sV=1&FORM=MPSRPL&q=Ranetti+Armarinho&ss=id.ypid%3AYN7993x5859191126295860030&ppois=-10.942157745361328_-37.05955123901367_Ranetti+Armarinho_YN7993x5859191126295860030%7E&cp=-10.942158%7E-37.059551&lvl=11&style=r">📍 Ver no mapa</a><br>
-      <div class="links">
-        <a href="tel:79991717847">📞 Ligar</a>
-        <a href="https://wa.me/5579991717847" target="_blank">💬 WhatsApp</a>
+      <a href="https://www.bing.com/maps?q=Ranetti+Armarinho"
+   target="_blank"
+   onclick="gtag('event','ranetti_mapa');">
+📍 Ver no mapa
+</a>
+
+<a href="tel:79991717847"
+   onclick="gtag('event','ranetti_ligar');">
+📞 Ligar
+</a>
+
+<a href="https://wa.me/5579991717847"
+   target="_blank"
+   onclick="gtag('event','ranetti_whatsapp');">
+💬 WhatsApp
+</a>
+
       </div>
     </div>
 
     <div class="item">
       <strong>Solange</strong>
       Rua Vereador João Calazans, 384 – 13 de Julho<br>
-      <a href="https://maps.google.com/?q=Rua+Vereador+João+Calazans+384+Aracaju" target="_blank">📍 Ver no mapa</a><br>
-      <div class="links">
-        <a href="tel:79996040851">📞 Ligar</a>
-        <a href="https://wa.me/5579996040851" target="_blank">💬 WhatsApp</a>
+      <a href="https://maps.google.com/?q=Rua Vereador João Calazans 384 Aracaju"
+   target="_blank"
+   onclick="gtag('event','solange_mapa');">
+📍 Ver no mapa
+</a>
+
+<a href="tel:79996040851"
+   onclick="gtag('event','solange_ligar');">
+📞 Ligar
+</a>
+
+<a href="https://wa.me/5579996040851"
+   target="_blank"
+   onclick="gtag('event','solange_whatsapp');">
+💬 WhatsApp
+</a>
+
       </div>
     </div>
 
