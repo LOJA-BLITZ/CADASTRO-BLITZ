@@ -1,264 +1,183 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Google tag (gtag.js) -->
+
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGHRN3BGNH"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-KGHRN3BGNH');
 </script>
-  <meta charset="UTF-8">
-  <title>BLITZ – Aracaju</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 20px;
-      background: #ffffff;
-      color: #222;
-    }
+<meta charset="UTF-8">
+<title>BLITZ – Aracaju</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    h1 {
-      text-align: center;
-      font-size: 22px;
-      margin-bottom: 25px;
-    }
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    color: #222;
+  }
 
-    .botao {
-      width: 100%;
-      padding: 14px;
-      margin-bottom: 12px;
-      font-size: 16px;
-      font-weight: bold;
-      text-align: center;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      background: #f8f8f8;
-      cursor: pointer;
-    }
+  h1 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
 
-    .conteudo {
-      display: none;
-      border: 1px solid #eee;
-      border-radius: 10px;
-      padding: 14px;
-      margin-bottom: 20px;
-      font-size: 14px;
-    }
+  .botao {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #f8f8f8;
+    cursor: pointer;
+  }
 
-    .item {
-      margin-bottom: 16px;
-    }
+  .conteudo {
+    display: none;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
 
-    .item strong {
-      display: block;
-      margin-bottom: 4px;
-    }
+  .item {
+    margin-bottom: 16px;
+  }
 
-    .links a {
-      display: inline-block;
-      margin-right: 12px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #000;
-    }
+  a {
+    color: #0066cc;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 6px;
+  }
+</style>
 
-    .copiar {
-      margin-top: 8px;
-      padding: 8px 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      cursor: pointer;
-      background: #eee;
-      font-weight: bold;
-    }
-  </style>
+<script>
+  function toggle(id) {
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === "block" ? "none" : "block";
+  }
+</script>
 
-  <script>
-    function toggle(id) {
-      const el = document.getElementById(id);
-      el.style.display = el.style.display === "block" ? "none" : "block";
-    }
-
-    function copiarPix() {
-      const chave = "35.142.091/0001-84";
-      navigator.clipboard.writeText(chave);
-      alert("Chave PIX copiada!");
-    }
-  </script>
 </head>
 
 <body>
 
-  <h1>BLITZ – Aracaju<br>Como podemos te ajudar?</h1>
+<h1>BLITZ – Aracaju<br>Como podemos te ajudar?</h1>
 
-  <!-- CADASTRO -->
-  <button class="botao"
-        onclick="toggle('cadastro'); gtag('event','cadastro_clientes');">
+<!-- CADASTRO -->
+<button class="botao" onclick="toggle('cadastro'); gtag('event','cadastro_abrir');">
 👤 Cadastro de Clientes
 </button>
 
 <div class="conteudo" id="cadastro">
-  <a href="https://loja-blitz.github.io/CADASTRO-BLITZ/"
-     target="_blank"
-     onclick="gtag('event','cadastro_abrir_formulario');">
-  📝 Abrir formulário de cadastro
+  <a href="https://loja-blitz.github.io/CADASTRO-BLITZ/" target="_blank"
+     onclick="gtag('event','cadastro_formulario');">
+     📄 Abrir formulário de cadastro
   </a>
 </div>
 
-
-  <!-- WIFI -->
-  <button class="botao"
-        onclick="toggle('wifi'); gtag('event','wifi_abrir');">
+<!-- WIFI -->
+<button class="botao" onclick="toggle('wifi'); gtag('event','wifi_abrir');">
 📶 Wi-Fi da Loja
 </button>
 
-  <div class="conteudo" id="wifi">
-    <strong>Rede:</strong> lojablitzaju<br>
-    <strong>Senha:</strong> cliente1000
-  </div>
+<div class="conteudo" id="wifi">
+  <strong>Rede:</strong> lojablitzaju<br>
+  <strong>Senha:</strong> cliente1000
+</div>
 
-  <!-- PIX -->
-  <button class="botao"
-        onclick="toggle('pix'); gtag('event','pix_aberto');">
+<!-- PIX -->
+<button class="botao" onclick="toggle('pix'); gtag('event','pix_abrir');">
 💰 Pagamento via Pix
 </button>
 
-  <div class="conteudo" id="pix">
-    <strong>Chave Pix (CNPJ):</strong><br>
-    35.142.091/0001-84<br>
-    Carvalho e Aragão Varejista LTDA<br>
-    <button onclick="navigator.clipboard.writeText('35.142.091/0001-84');
-                 gtag('event','pix_copiar_chave');">
-📋 Copiar chave Pix
+<div class="conteudo" id="pix">
+  <strong>Chave Pix (CNPJ)</strong><br>
+  35.142.091/0001-84<br><br>
+  Carvalho e Aragão Varejista LTDA<br><br>
+  <button onclick="navigator.clipboard.writeText('35.142.091/0001-84'); gtag('event','pix_copiar');">
+    📋 Copiar chave Pix
+  </button>
+</div>
+
+<!-- INSTAGRAM -->
+<button class="botao" onclick="toggle('instagram'); gtag('event','instagram_abrir');">
+📸 Instagram da Loja
 </button>
 
+<div class="conteudo" id="instagram">
+  <a href="https://www.instagram.com/lojablitz/" target="_blank"
+     onclick="gtag('event','instagram_link');">
+     👉 Abrir Instagram
+  </a>
+</div>
+
+<!-- COSTUREIRAS -->
+<button class="botao" onclick="toggle('costureiras'); gtag('event','costureiras_abrir');">
+🧵 Costureiras
+</button>
+
+<div class="conteudo" id="costureiras">
+
+  <div class="item">
+    <strong>Maria Maria Ateliê</strong><br>
+    Rua Urquiza Leal, Galeria 15 – Sala 5<br>
+    Praça Assis Chateaubriand – Salgado Filho<br>
+    <a href="https://maps.app.goo.gl/uOhcCS2TLzriiF698" target="_blank"
+       onclick="gtag('event','maria_mapa');">📍 Ver no mapa</a>
+    <a href="tel:79999768810" onclick="gtag('event','maria_ligar');">📞 Ligar</a>
+    <a href="https://wa.me/557999768810" target="_blank"
+       onclick="gtag('event','maria_whatsapp');">💬 WhatsApp</a>
   </div>
 
-  <!-- INSTAGRAM -->
-  <a class="botao"
-   href="https://instagram.com/SUA_LOJA"
-   target="_blank"
-   onclick="gtag('event','instagram_loja');">
-📸 Instagram da Loja
-</a>
-
-  <div class="conteudo" id="insta">
-    <a href="https://www.instagram.com/lojablitz/" target="_blank">
-      👉 Abrir Instagram
-    </a>
+  <div class="item">
+    <strong>Zig Zag Ateliê</strong><br>
+    Av. Hermes Fontes, 1777 – Grageru<br>
+    <a href="https://maps.google.com/?q=Av Hermes Fontes 1777 Aracaju"
+       target="_blank" onclick="gtag('event','zigzag_mapa');">📍 Ver no mapa</a>
+    <a href="tel:7932113198" onclick="gtag('event','zigzag_ligar_fixo');">📞 Fixo</a>
+    <a href="tel:79996081671" onclick="gtag('event','zigzag_ligar_celular');">📞 Celular</a>
+    <a href="https://wa.me/5579996081671" target="_blank"
+       onclick="gtag('event','zigzag_whatsapp');">💬 WhatsApp</a>
   </div>
 
-  <!-- COSTUREIRAS -->
-  <button class="botao" onclick="toggle('costureiras')">🧵 Costureiras</button>
-  <div class="conteudo" id="costureiras">
-
-    <div class="item">
-      <strong>Maria Maria Ateliê</strong>
-      Rua Urquiza Leal, Galeria 15 – Sala 5<br>
-      Praça Assis Chateaubriand – Salgado Filho<br>
-     <a href="https://maps.app.goo.gl/uoHcCS2TLzriiF698"
-   target="_blank"
-   onclick="gtag('event','costureira_maria_mapa');">
-📍 Ver no mapa
-</a><br>
-
-<a href="tel:79999768810"
-   onclick="gtag('event','costureira_maria_ligar');">
-📞 Ligar
-</a>
-
-<a href="https://wa.me/5579999768810"
-   target="_blank"
-   onclick="gtag('event','costureira_maria_whatsapp');">
-💬 WhatsApp
-</a>
-
-      </div>
-    </div>
-
-    <div class="item">
-      <strong>Zig Zag Ateliê</strong>
-      Av. Hermes Fontes, 1777 – Grageru<br>
-      <a href="https://maps.google.com/?q=Av Hermes Fontes 1777 Aracaju"
-   target="_blank"
-   onclick="gtag('event','costureira_zigzag_mapa');">
-📍 Ver no mapa
-</a>
-
-<a href="tel:7932113198"
-   onclick="gtag('event','costureira_zigzag_ligar_fixo');">
-📞 Ligar (fixo)
-</a>
-
-<a href="tel:79996081671"
-   onclick="gtag('event','costureira_zigzag_ligar_celular');">
-📞 Ligar (celular)
-</a>
-
-<a href="https://wa.me/5579996081671"
-   target="_blank"
-   onclick="gtag('event','costureira_zigzag_whatsapp');">
-💬 WhatsApp
-</a>
-
-      </div>
-    </div>
-
-    <div class="item">
-      <strong>Armarinho Ranetti</strong>
-      Shopping Jardins – Aracaju<br>
-      Próximo à Casa da Cópia / em frente à farmácia GBarbosa<br>
-      <a href="https://www.bing.com/maps?q=Ranetti+Armarinho"
-   target="_blank"
-   onclick="gtag('event','ranetti_mapa');">
-📍 Ver no mapa
-</a>
-
-<a href="tel:79991717847"
-   onclick="gtag('event','ranetti_ligar');">
-📞 Ligar
-</a>
-
-<a href="https://wa.me/5579991717847"
-   target="_blank"
-   onclick="gtag('event','ranetti_whatsapp');">
-💬 WhatsApp
-</a>
-
-      </div>
-    </div>
-
-    <div class="item">
-      <strong>Solange</strong>
-      Rua Vereador João Calazans, 384 – 13 de Julho<br>
-      <a href="https://maps.google.com/?q=Rua Vereador João Calazans 384 Aracaju"
-   target="_blank"
-   onclick="gtag('event','solange_mapa');">
-📍 Ver no mapa
-</a>
-
-<a href="tel:79996040851"
-   onclick="gtag('event','solange_ligar');">
-📞 Ligar
-</a>
-
-<a href="https://wa.me/5579996040851"
-   target="_blank"
-   onclick="gtag('event','solange_whatsapp');">
-💬 WhatsApp
-</a>
-
-      </div>
-    </div>
-
+  <div class="item">
+    <strong>Armarinho Ranetti</strong><br>
+    Shopping Jardins – Aracaju<br>
+    Próximo à Casa da Cópia<br>
+    <a href="https://www.bing.com/maps?q=Ranetti+Armarinho"
+       target="_blank" onclick="gtag('event','ranetti_mapa');">📍 Ver no mapa</a>
+    <a href="tel:79991717847" onclick="gtag('event','ranetti_ligar');">📞 Ligar</a>
+    <a href="https://wa.me/5579991717847" target="_blank"
+       onclick="gtag('event','ranetti_whatsapp');">💬 WhatsApp</a>
   </div>
+
+  <div class="item">
+    <strong>Solange</strong><br>
+    Rua Vereador João Calazans, 384 – 13 de Julho<br>
+    <a href="https://maps.google.com/?q=Rua Vereador João Calazans 384 Aracaju"
+       target="_blank" onclick="gtag('event','solange_mapa');">📍 Ver no mapa</a>
+    <a href="tel:79996040851" onclick="gtag('event','solange_ligar');">📞 Ligar</a>
+    <a href="https://wa.me/5579996040851" target="_blank"
+       onclick="gtag('event','solange_whatsapp');">💬 WhatsApp</a>
+  </div>
+
+</div>
 
 </body>
 </html>
