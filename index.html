@@ -87,7 +87,24 @@
     <label>E-mail:
       <input type="email" id="email">
     </label>
-
+<div>
+  <label>Tamanho da roupa:
+    <select id="tamanhoRoupa" required>
+      <option value="">Selecione</option>
+      <option>PP</option>
+      <option>P</option>
+      <option>M</option>
+      <option>G</option>
+      <option>GG</option>
+      <option>XGG</option>
+    </select>
+  </label>
+</div>
+    <div>
+  <label>Numeração do calçado:
+    <input type="text" id="calcado" placeholder="Ex.: 36, 37, 38">
+  </label>
+</div>
     <div class="linha-dupla">
       <div>
         <label>Vendedor:
@@ -115,10 +132,12 @@
       const bairro = document.getElementById('bairro').value;
       const cidade = document.getElementById('cidade').value;
       const email = document.getElementById('email').value;
+      const tamanhoRoupa = document.getElementById('tamanhoRoupa').value;
+      const calcado = document.getElementById('calcado').value;
       const vendedor = document.getElementById('vendedor').value;
       const dataCadastro = document.getElementById('dataCadastro').value;
 
-      if (!nome || !telefone || !dataNasc || !endereco || !bairro || !cidade || !vendedor || !dataCadastro) {
+     if (!nome || !telefone || !dataNasc || !endereco || !bairro || !cidade || !tamanhoRoupa || !vendedor || !dataCadastro) {
         alert("Preencha todos os campos obrigatórios.");
         return;
       }
@@ -132,6 +151,8 @@
         "*Bairro:* " + bairro + "\n" +
         "*Cidade:* " + cidade + "\n" +
         "*E-mail:* " + (email || "-") + "\n" +
+        "*Tamanho da roupa:* " + tamanhoRoupa + "\n" +
+        "*Numeração do calçado:* " + calcado + "\n" +
         "*Vendedor:* " + vendedor + "\n" +
         "*Data do cadastro:* " + dataCadastro;
 
